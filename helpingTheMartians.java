@@ -15,12 +15,12 @@ class helpingTheMartians {
     }
 
     static int[] cargoScatter(int[] previousMarks) {
-        int[] cargoMarks = new int[3];
+        int[] cargoMarks = new int[]{7, 7, 7};
         Random scatter = new Random();
         for (int i = 0; i < 3; i++) {
             while (true) {
                 int mark = scatter.nextInt(7);
-                if (!contains(cargoMarks, mark) && (!contains(previousMarks, mark))) {
+                if (!contains(previousMarks, mark) && (!contains(cargoMarks, mark))) {
                     cargoMarks[i] = mark;
                     break;
                 }
